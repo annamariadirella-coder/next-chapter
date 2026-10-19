@@ -6,9 +6,11 @@ You do not need to install the scanner or write an Evidence Bank before starting
 
 1. Open a new conversation in your AI assistant. Stay in that conversation for the initial workflow.
 2. Attach your CV, or paste its text.
-3. Copy **only the message in the box in step 2 below**, paste it into the same conversation and send it. You do not need to copy every repository file or complete the other templates first.
+3. Copy **only the starter message under “Attach your CV and copy this message” below**, paste it into the same conversation and send it. You do not need to copy every repository file or complete the other templates first.
 
 Expect a brief CV summary and at most three useful questions in the first response. After you confirm the relevant facts, the assistant proposes your search profile and initial Evidence Bank. If it already has enough information, it should not ask questions just to reach three.
+
+Your first useful result is one reviewed role: supported requirements, unresolved questions and a draft CV if you choose to proceed. You do not need to install Google Apps Script to reach that point. If no credible match is found, the assistant should explain the gap instead of filling a shortlist.
 
 GitHub hosts the instructions; your private assistant conversation is where you provide the CV, answer questions and receive the work. A link to this guide does not automatically configure an assistant: the copied message starts the workflow.
 
@@ -93,4 +95,3 @@ Ask me only decisive questions, then prepare the CV for a role I select.
 ```
 
 The scanner does not update your tracker automatically. After you submit, record the role and status in your private tracker so future scans can exclude it.
-
