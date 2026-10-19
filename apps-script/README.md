@@ -22,6 +22,8 @@ An absent/empty property preserves the original defaults; malformed or unsupport
 
 ## New installation
 
+Download the repository ZIP from GitHub's **Code → Download ZIP** menu and extract it first, so the files referenced below are available. Allow time for manual setup; this is not a one-click installation. If you already have a working scanner, use [existing-installation guidance](#existing-working-installations) instead.
+
 1. Complete the Evidence Bank template privately. Create a private targeting document describing role/location/language preferences. Supported sources include native Google Docs, DOCX and text files.
 2. Import `templates/tracker-template.csv` into a native Google Sheet. Preserve Company, Role title, Source and Status headers; the scanner reads this sheet and does not write to it.
 3. Create an empty private Drive folder to provide the initial OUTPUT_FOLDER_ID. No reports are published.
@@ -41,6 +43,16 @@ An absent/empty property preserves the original defaults; malformed or unsupport
 8. After the manual scan succeeds, run `enableDailyScan` once. The default window is 09:00–10:00 Europe/Berlin, not an exact minute. Adjust the scheduler timezone/hour if necessary.
 
 Never commit Script Property values, source files, reports or credentials. Do not deploy the collector as a public web app.
+
+### How to tell whether your first scan worked
+
+- The manual `scanJobs` execution finishes without an unhandled error.
+- Your app-owned private output folder contains `candidates.md`, `candidates.json` and `processed_jobs.json`.
+- Open `candidates.md`: check the run date and completed sources, failures and deferred work. Zero candidates can be a valid result; partial coverage is not a complete search.
+- Open an original employer link and compare its location and requirements with the report before deciding what to pursue.
+- Confirm the tracker was read and inspect duplicate checking. If access or headers are wrong, fix them before relying on the result.
+
+Only then enable the daily trigger. Reports stay in Drive; the scanner does not email you a shortlist or start an assistant conversation. Bring `candidates.md` into your private assistant conversation for evidence-based review. If something fails, start with [troubleshooting](../TROUBLESHOOTING.md).
 
 ## Existing working installations
 
@@ -75,4 +87,3 @@ Apps Script quotas and provider access limits apply. The soft deadline cannot ca
 Scoring.gs and ScoringConfig.gs are supplied for compatibility and synthetic tests; they are not required for collector-only use. If installed, no model calls occur unless AI_SCORING_ENABLED is exactly `true` and private OPENAI_API_KEY/OPENAI_MODEL configuration is valid. Custom SEARCH_PROFILE_JSON disables the inherited paid scorer and reports custom_profile_requires_guided_review, because that scorer's prompt assumes Germany. AI_MAX_JOBS defaults to 3. Enabling scoring for the original defaults sends selected private source text to the configured API and incurs provider charges. Do not enable it merely to follow this guide.
 
 The free guided workflow instead reviews the private report with your assistant and asks you decisive questions. That assistant environment may have its own subscription costs and usage limits.
-

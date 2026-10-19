@@ -2,7 +2,29 @@
 
 *Your experience. Better understood.*
 
-An independent open-source guided workflow for finding relevant jobs and preparing truthful, tailored applications from a private Career Evidence Bank.
+Job searching means repeating your story, checking scattered listings and deciding which requirements your experience actually supports. Next Chapter helps you keep that work together: find opportunities, ask useful clarification questions and prepare a truthful CV for a role you choose.
+
+It is an independent open-source workflow you use with your own AI assistant. Your private Career Evidence Bank records experience you confirm; it is not an external certification or reference check.
+
+## Choose your starting point
+
+| You want to… | Start with | What you need |
+|---|---|---|
+| Use your existing CV to assess a role and prepare an application | [Start here](START-HERE.md) | Your CV and an AI assistant; a pasted job description works without browsing |
+| Understand the process before sharing personal information | [Try the fictional example](examples/first-application.md) | Supplied fictional inputs; no scanner or Google setup |
+| Collect opportunities on a daily schedule | [Install the optional scanner](apps-script/README.md) | A Google account, private reference files and a tracker; setup and authorization required |
+
+**Start with your CV. Add the scanner later if useful.** Downloading or starring this repository does not run anything.
+
+## What you get
+
+A typical review explains which requirements your confirmed experience supports, what remains unknown and which short questions could change the decision. For a role you choose, your assistant prepares a tailored CV and requested answers for your review. Downloadable documents depend on the assistant's capabilities.
+
+For example, “built automation” may become “defined routing requirements, coordinated testing and trained the team” after you clarify that Engineering wrote the integration. The aim is a more accurate application, not a fabricated stronger claim. [See the full fictional walkthrough](examples/first-application.md).
+
+The optional scanner produces a private review packet. An employer-verified posting means its source was checked during collection; it does not mean the job is suitable for you, that pay is confirmed or that you can legally work from your location.
+
+## How it works
 
 The assistant helps with four steps:
 
@@ -21,7 +43,7 @@ Try the fictional walkthrough with its supplied CV, JDs and tracker; see [review
 
 **Is the scan doing enough?** [Check coverage and deferred work](SCAN-COVERAGE.md). An optional offline audit reports counts without changing your scan or exposing vacancy content.
 
-## What this project is today
+## What is included and what it costs
 
 This package contains a reusable assistant instruction, an Evidence Bank template, a tracker template, a review checklist and an optional Google Apps Script morning scanner. It is a documented, human-guided workflow, not an autonomous application agent. The scanner runs only after you configure it in your own Google account.
 
@@ -62,7 +84,7 @@ An existing working installation does not need replacement to use the assistant 
 
 ## Tests and provenance
 
-Run `node tests/apps_script.test.cjs` with Node.js 20+ for synthetic collector checks. The collector and its fixtures are a pinned MIT-licensed snapshot from JobOps; see [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). No private runtime data is included.
+Run the JavaScript suites listed in [the checks workflow](.github/workflows/checks.yml) from the repository root with Node.js 24, matching CI. These use synthetic inputs. The collector and its fixtures are a pinned MIT-licensed snapshot from JobOps; see [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). No private runtime data is included.
 
 Run `node tests/search_profile.test.cjs` for the configurable-profile and read-only-check tests. Custom profiles use the guided assistant review; the inherited paid scorer is blocked for them because its prompt assumes Germany.
 
@@ -75,4 +97,3 @@ The workflow requires human judgment and source verification. Exact quotations e
 ## License
 
 MIT. Copyright notices for the reused collector are retained. LinkedIn publication is a separate action; no post is sent by this project.
-
